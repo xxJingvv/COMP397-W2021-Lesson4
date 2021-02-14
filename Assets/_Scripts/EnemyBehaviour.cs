@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public NavMeshAgent navMeshAgent;
+    public UnityEngine.AI.NavMeshAgent nma;
     public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        nma = GetComponent<UnityEngine.AI.NavMeshAgent>();    
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(player.position);
+        nma.SetDestination(player.position);
     }
 }
